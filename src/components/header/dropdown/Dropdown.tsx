@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './Dropdown.scss';
 
 interface DropdownProps {
@@ -9,7 +9,7 @@ interface DropdownProps {
 }
 
 
-export const Dropdown = ({openDropdown, choiseLanguage, setOpenDropdown, setChoiseLanguage}) => {
+export const Dropdown: FC<DropdownProps> = ({openDropdown, choiseLanguage, setOpenDropdown, setChoiseLanguage}) => {
     const changeLanguage = (language: string) => {
         setChoiseLanguage(language);
         setOpenDropdown(false);
@@ -22,8 +22,8 @@ export const Dropdown = ({openDropdown, choiseLanguage, setOpenDropdown, setChoi
                 <div className={openDropdown ? "caret caret-rotate" : "caret"}></div>
             </div>
             <ul className={openDropdown ? "menu menu-open" : "menu"}>
-                <li className={choiseLanguage === "ENG" ? "active" : ""} onClick={() => changeLanguage("ENG")}>ENG</li>
-                <li className={choiseLanguage === "UA" ? "active" : ""} onClick={() => changeLanguage("UA")}>UA</li>
+                <li className={choiseLanguage === "English" ? "active" : ""} onClick={() => changeLanguage("English")}>English</li>
+                <li className={choiseLanguage === "Ukrainian" ? "active" : ""} onClick={() => changeLanguage("Ukrainian")}>Ukrainian</li>
             </ul>
         </div>
     )

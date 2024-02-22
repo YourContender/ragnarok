@@ -1,0 +1,60 @@
+.preview {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    &_img {
+        background: url(../../img/bg-preview.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: none;
+        width: 64%;
+        height: 764px;
+        opacity: 1;
+        z-index: -99;
+        border: 1px solid transparent; /* Установите прозрачную границу, чтобы сделать место для размытой тени */
+        // box-shadow: 5px 0px 20px #1c2023; 
+        // box-shadow: 
+        //     5px 0 10px #1c2023, /* Тень слева */
+        //     0 0 20px #1c2023; /* Размытая тень */
+
+    }
+    &_block {
+        background: transparent;
+        width: 36%;
+        height: 764px;
+        position: relative;
+        z-index: -90;
+        &-title {
+            position: absolute;
+            top: 25%;
+            left: 68%;
+            width: 530px;
+            color: #fff;
+            font-family: "Chakra Petch", sans-serif;
+            h1 {
+                font-weight: 700;
+                font-size: 72px;
+                letter-spacing: 2px;
+                width: 530px;
+                margin: 0;
+                margin-bottom: 15px;
+            }
+            span {
+                font-weight: 400;
+                font-size: 18px;
+                color: #A9C7C7;
+            }
+            button {
+                display: block;
+                padding: 10px 20px;
+                background-color: #8856D9;
+                color: #fff;
+                text-transform: uppercase;
+                margin-top: 20px;
+                border-radius: 8px;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}

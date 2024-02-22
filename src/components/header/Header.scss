@@ -4,23 +4,34 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: #1C2023;
+    background-color: transparent;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    position: absolute;
     &_container {
         height: calc($index * 3);
         display: flex;
         align-items: center;
+        justify-content: space-around;
         width: 1200px;
     }
     &_sidebar {
         display: flex;
+        align-items: center;
         &-item {
             color: #fff;
             padding: 0 10px;
             text-transform: uppercase;
             cursor: pointer;
+            transition: 0.5s ease-in;
             &:hover {
-                color: rgb(195, 45, 214);
+                color: #8856D9;
             }
+        }
+        &-logo {
+            color: #fff;
+            font-size: 24px;
+            padding: 0 10px;
         }
     }
 }
