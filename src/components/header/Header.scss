@@ -1,0 +1,26 @@
+@import '../../sass/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #1C2023;
+    &_container {
+        height: calc($index * 3);
+        display: flex;
+        align-items: center;
+        width: 1200px;
+    }
+    &_sidebar {
+        display: flex;
+        &-item {
+            color: #fff;
+            padding: 0 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                color: rgb(195, 45, 214);
+            }
+        }
+    }
+}
