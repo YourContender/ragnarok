@@ -1,3 +1,5 @@
+@import '../../sass/variables.scss';
+
 .preview {
     width: 100%;
     height: 100vh;
@@ -11,12 +13,7 @@
         height: 764px;
         opacity: 1;
         z-index: -99;
-        border: 1px solid transparent; /* Установите прозрачную границу, чтобы сделать место для размытой тени */
-        // box-shadow: 5px 0px 20px #1c2023; 
-        // box-shadow: 
-        //     5px 0 10px #1c2023, /* Тень слева */
-        //     0 0 20px #1c2023; /* Размытая тень */
-
+        border: 1px solid transparent; 
     }
     &_block {
         background: transparent;
@@ -54,6 +51,120 @@
                 border-radius: 8px;
                 border: none;
                 outline: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .preview {
+        &_img {
+            width: 85%;
+        }
+        &_block {
+            width: 15%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .preview {
+        &_block {
+            width: 0;
+            &-title {
+                margin-left: 50px;
+                width: 450px;
+            }
+        }
+        &_img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 778px) {
+    .preview {
+        &_block {
+            &-title {
+                width: 305px;
+                h1 {
+                    font-size: 60px;
+                    width: 350px;
+                }
+                span {
+                    width: 350px;
+                }
+            }
+        }
+        &_img {
+            width: 100%;
+            background-position: -190px 0;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .preview {
+        &_block {
+            &-title {
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+        &_img {
+            background-position: -300px 0;
+        }
+    }
+}
+
+@media (max-width: 476px) {
+    .preview {
+        &_block {
+            &-title {
+                position: relative;
+                height: 500px;
+                margin-left: calc($index * 4);
+                width: 330px;
+                h1 {
+                    position: absolute;
+                    top: -60px;
+                    color: #2f3f3f;
+                    width: 315px;
+                    font-size: 48px;
+                    text-align: center;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                span {
+                    position: absolute;
+                    top: 80%;
+                    left: -5%;
+                    font-size: 14px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 305px;
+                }
+                button {
+                    position: absolute;
+                    bottom: -10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin: 20px auto;
+                }
+            }
+        }
+        &_img {
+            background-position: -455px 0;
+        }
+    }
+}
+
+@media (max-width: 396px) {
+    .preview {
+        &_block {
+            &-title {
+                width: 300px;
             }
         }
     }

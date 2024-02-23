@@ -14,15 +14,15 @@ export const Timer = () => {
                 <span className='timer-title'>release</span>
                 <span className="timer-item">
                     {days}
-                    <p>D</p>
+                    <p>DAYS</p>
                 </span> 
                 <span className="timer-item">
                     {hours.length < 10 ? `0${hours}`: hours}
-                    <p>H</p>
+                    <p>HOURS</p>
                 </span> 
                 <span className="timer-item">
                     {minutes === 0 ? "00" : minutes}
-                    <p>M</p>
+                    <p>MINUTES</p>
                 </span> 
             </div>
           );
