@@ -1,0 +1,89 @@
+@import "../../sass/mixins.scss";
+
+.about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &_title {
+        h1 {
+            @include title;
+        }
+    }
+    &_container {
+        background: url(../../img/about-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 940px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        &-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            h1 {
+                font-family: "Chakra Petch", sans-serif;
+                color: #fff;
+                letter-spacing: 1px;
+                font-weight: 700;
+                font-size: 52px;
+                margin: 10px 0;
+            }
+            button {
+                @include button(#8856D9, 0);
+                padding: 10px 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .about {
+        &_container {
+            background-position: -380px 0;
+            height: 840px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .about {
+        &_container {
+            background-position: -375px 0;
+            height: 800px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .about {
+        &_container {
+            background-position: -500px 0;
+            height: 700px;
+            &-text {
+                h1 {
+                    font-size: 42px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 424px) {
+    .about {
+        &_container {
+            background-position: -400px 0;
+            height: 550px;
+            &-text {
+                h1 {
+                    font-size: 42px;
+                }
+            }
+        }
+    }
+}
