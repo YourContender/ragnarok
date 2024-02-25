@@ -1,14 +1,21 @@
+@import "../../sass/mixins.scss";
+
 .editions {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 0 20px 0;
+    margin: 20px 0 20px 0;
+    &_title {
+        h1 {
+            @include title;
+        }
+    }
     &_container {
         display: flex;
         flex-wrap: wrap;
-        width: 1200px;
+        justify-content: center;
     }
     &_card {
         position: relative;
@@ -21,6 +28,7 @@
         border-radius: 15px;
         color: #fff;
         margin: 20px;
+        box-shadow: 0 2px 15px #0f1113;
         &-title {
             text-align: center;
             margin-bottom: 30px;
@@ -55,15 +63,20 @@
                 font-size: 20px;
             }
             button {
-                display: block;
-                padding: 10px 20px;
-                background-color: #8856D9;
-                color: #fff;
-                text-transform: uppercase;
-                margin-top: 10px;
-                border-radius: 8px;
-                border: none;
-                outline: none;
+                @include button(#8856D9, 10px)
+            }
+        }
+    }
+}
+
+@media (max-width: 476px) {
+    .editions {
+        &_card {
+            width: 320px;
+            &-img {
+                img {
+                    width: 285px;
+                }
             }
         }
     }

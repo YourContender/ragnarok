@@ -1,0 +1,101 @@
+@import "../../sass/mixins.scss";
+
+.sense {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+    &_title {
+        h1 {
+            @include title;
+        }
+    }
+    &_container {
+        display: flex;
+        align-items: center;
+        // max-width: 900px;
+        &-left {
+            width: 425px;
+            font-size: 18px;
+            font-family: "Chakra Petch", sans-serif;
+            margin-right: 70px;
+        }
+        &-top {
+            color: #A9C7C7;
+            margin-bottom: 20px;
+            line-height: 25px;
+            letter-spacing: 1px;
+            span {
+                color: #8856D9;
+            }
+        }
+        &-bottom {
+            color: #A9C7C7;
+            line-height: 25px;
+            letter-spacing: 1px;
+            span {
+                color: #FF4136;
+            }
+        }
+        &-img {
+            margin-left: 70px;
+        }
+    }
+    &_price {
+        margin-top: 20px;
+        display: flex;
+        span {
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #fff;
+            margin-right: 20px;
+        }
+        button {
+            @include button(#FF4136, 0)
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .sense {
+        &_container {
+            margin-top: 20px;
+            flex-direction: column;
+            text-align: justify;
+            &-left {
+                margin-right: 0;
+            }
+            &-img {
+                margin-top: 50px;
+                margin-left: 0;
+            }
+        }
+        &_price {
+            margin-top: 40px;
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .sense {
+        &_container {
+            margin-top: 20px;
+            flex-direction: column;
+            text-align: justify;
+            &-left {
+                width: 320px;
+            }
+        }
+        &_price {
+            flex-direction: column;
+            align-items: center;
+            span {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

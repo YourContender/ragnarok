@@ -1,0 +1,21 @@
+@mixin button($bgcolor, $margin) {
+    display: block;
+    padding: 10px 20px;
+    background-color: $bgcolor;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: $margin;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+@mixin title{
+    text-transform: uppercase;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #8856D9;
+    padding: 0 10px;
+}

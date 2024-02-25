@@ -9,7 +9,7 @@ export const EditionsItem: FC<EditionsItemProps> = ({item}) => {
   return (
     <div className="editions_card">
         <div className="editions_card-img">
-            {/* <img src={require(item.img)} alt="card 1" /> */}
+            <img src={item.img} alt="card 1" />
         </div>
         <div className="editions_card-title">
             <h2>{item.title}</h2>

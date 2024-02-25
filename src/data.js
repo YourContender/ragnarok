@@ -1,7 +1,7 @@
 export const editions = [
 	{
 		id: 1,
-		img: "../../img/card1.png",
+		img: "https://github.com/YourContender/ragnarok/blob/main/src/img/card1.png?raw=true",
 		title: "Standard Edition",
 		subtitle: "PS5",
 		descr: [
@@ -13,7 +13,7 @@ export const editions = [
 	},
 	{
 		id: 2,
-		img: "../../img/card1.png",
+		img: "https://github.com/YourContender/ragnarok/blob/main/src/img/card1.png?raw=true",
 		title: "Standard Edition",
 		subtitle: "PS4",
 		descr: [
@@ -25,7 +25,7 @@ export const editions = [
 	},
 	{
 		id: 3,
-		img: "../../img/card2.png",
+		img: "https://github.com/YourContender/ragnarok/blob/main/src/img/card2.png?raw=true",
 		title: "Digital Deluxe Edition",
 		subtitle: "PS5",
 		descr: [
