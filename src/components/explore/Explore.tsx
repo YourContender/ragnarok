@@ -18,19 +18,21 @@ export const Explore: FC = () => {
                 <span>rec</span>
             </div>
             <div className="explore_pc-block">
-                <div className="explore_pc-block-img">
-                    <img src="" alt="" />
+                <div className="explore_pc-block-container">
+                    <div className="explore_pc-block-img"></div>
+                    <img src={require('../../img/explore1.png')} alt="" />
                 </div>
 
                 <div className="explore_pc-block-descr">
-                    <span>CPU: Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)</span>
-                    <span>RAM: 8 GB</span>
-                    <span>OS: Windows 10 64-bit</span>
-                    <span>VIDEOCARD: NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)</span>
-                    <span>PIXEL SHADER: 5.1</span>
-                    <span>VERTEX SHADER: 5.1</span>
-                    <span>FREE DISK SPACE: 70 GB</span>
-                    <span>DEDICATED VIDEO RAM: 4 GB</span>
+                    <div className="explore_pc-block-descr-item"><span>CPU:</span> Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)</div>
+                    <div className="explore_pc-block-descr-item"><span>RAM:</span> 8 GB</div>
+                    <div className="explore_pc-block-descr-item"><span>OS:</span> Windows 10 64-bit</div>
+                    <div className="explore_pc-block-descr-item"><span>VIDEOCARD:</span> NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)</div>
+                    <div className="explore_pc-block-descr-item"><span>PIXEL SHADER:</span> 5.1</div>
+                    <div className="explore_pc-block-descr-item"><span>VERTEX SHADER:</span> 5.1</div>
+                    <div className="explore_pc-block-descr-item"><span>FREE DISK SPACE:</span> 70 GB</div>
+                    <div className="explore_pc-block-descr-item"><span>DEDICATED VIDEO RAM:</span> 4 GB</div>
+                    <button>buy now</button>
                 </div>
             </div>
         </div>
