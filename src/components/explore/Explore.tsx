@@ -1,47 +1,101 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import "./Explore.scss";
+import { SwitchButton } from '../widgets/SwitchButton.tsx';
+import { exploreData } from '../../data.js';
+import { ExploreItemPC } from './ExploreItemPC.tsx';
+
 
 export const Explore: FC = () => {
-  return (
-    <div className="explore">
-        <div className="explore_title">
-            <h1>Explore the God of War series</h1>
-        </div>
+    // console.log(exploreData[0])
+    const [changeDescription, setChangeDescription] = useState("min");
+    const [changeDescriptionPS, setChangeDescriptionPS] = useState("min");
 
-        <div className="explore_pc">
-            <div className="explore_pc-title">
-                <h4>Here are the God of War (PC) System Requirements</h4>
+    return (
+        <div className="explore">
+            <div className="explore_title">
+                <h1>Explore the God of War series</h1>
             </div>
-            <div className="explore_pc-switch">
-                <span>min</span>
-                <button>switch</button> 
-                <span>rec</span>
-            </div>
-            <div className="explore_pc-block">
-                <div className="explore_pc-block-container">
-                    <div className="explore_pc-block-img"></div>
-                    <img src={require('../../img/explore1.png')} alt="" />
+
+            <div className="explore_pc">
+                <div className="explore_pc-title">
+                    <h4>Here are the God of War (PC) System Requirements</h4>
                 </div>
+                <div className="explore_pc-switch">
+                    <span 
+                        className={
+                            changeDescription === "min" ? 
+                                "explore_pc-switch-item active" : 
+                                "explore_pc-switch-item"}
+                    >
+                        Minimum
+                    </span>
+                    <SwitchButton 
+                        changeDescription={changeDescription} 
+                        setChangeDescription={setChangeDescription}
+                    />
+                    <span 
+                        className={
+                            changeDescription === "rec" ? 
+                            "explore_pc-switch-item active" : 
+                            "explore_pc-switch-item"}
+                    >
+                        Recommended
+                    </span>
+                </div>
+                <div className="explore_pc-block">
+                    <div className="explore_pc-block-container">
+                        <div className="explore_pc-block-img"></div>
+                        <img src={require('../../img/explore1.png')} alt="" />
+                    </div>
 
-                <div className="explore_pc-block-descr">
-                    <div className="explore_pc-block-descr-item"><span>CPU:</span> Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)</div>
-                    <div className="explore_pc-block-descr-item"><span>RAM:</span> 8 GB</div>
-                    <div className="explore_pc-block-descr-item"><span>OS:</span> Windows 10 64-bit</div>
-                    <div className="explore_pc-block-descr-item"><span>VIDEOCARD:</span> NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)</div>
-                    <div className="explore_pc-block-descr-item"><span>PIXEL SHADER:</span> 5.1</div>
-                    <div className="explore_pc-block-descr-item"><span>VERTEX SHADER:</span> 5.1</div>
-                    <div className="explore_pc-block-descr-item"><span>FREE DISK SPACE:</span> 70 GB</div>
-                    <div className="explore_pc-block-descr-item"><span>DEDICATED VIDEO RAM:</span> 4 GB</div>
-                    <button>buy now</button>
+                    <ExploreItemPC 
+                        data={changeDescription === "min" ? exploreData[0] : exploreData[1]}
+                    />
+                </div>
+            </div>
+
+            <div className="explore_ps">
+                <div className="explore_ps-title">
+                    <h4>God of War for PS4</h4>
+                </div>
+                <div className="explore_ps-switch">
+                    <span 
+                        className={
+                            changeDescription === "min" ? 
+                                "explore_pc-switch-item active" : 
+                                "explore_pc-switch-item"}
+                    >
+                        Standard
+                    </span>
+                    <SwitchButton 
+                        changeDescription={changeDescription} 
+                        setChangeDescription={setChangeDescription}
+                    />
+                    <span 
+                        className={
+                            changeDescription === "rec" ? 
+                            "explore_pc-switch-item active" : 
+                            "explore_pc-switch-item"}
+                    >
+                        Limited
+                    </span>
+                </div>
+                <div className="explore_ps-price">
+                    <h2>15.99 $</h2>
+                </div>
+                <div className="explore_ps-block">
+                    <ExploreItemPC 
+                        data={changeDescription === "min" ? exploreData[0] : exploreData[1]}
+                    />
+
+                    <div className="explore_ps-block-container">
+                        <div className="explore_ps-block-img"></div>
+                        <img src={require('../../img/explore2.png')} alt="" />
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
-
-        <div className="explore_ps">
-            <div className="explore_ps-title"></div>
-            <div className="explore_ps-switch"></div>
-            <div className="explore_ps-block"></div>
-        </div>
-    </div>
-  )
+    )
 }

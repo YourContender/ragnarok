@@ -15,10 +15,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         &-title {
             h4 {
                 color: #fff;
-
+                font-size: 20px;
+            }
+        }
+        &-switch {
+            color: #30373F;
+            &-item {
+                padding: 0 20px;
+                background-color: transparent;
             }
         }
         &-block {
@@ -28,7 +36,7 @@
             margin-top: 100px;
             position: relative;
             &-container {
-                width: 450px;
+                width: 395px;
             }
             &-img {
                 background: url(../../img/explore1-bg.png);
@@ -38,23 +46,63 @@
             }
             img {
                 position: absolute;
-                top: -90px;
+                top: -65px;
+                left: 10px;
             }
             &-descr {
+                width: 585px;
                 &-item {
                     font-family: "Chakra Petch", sans-serif;
                     font-weight: 400;
                     margin: 10px 0;
                     color: #fff;
+                    margin: 15px 0;
                     span {
                         color: #8856D9;
                         font-weight: 700;
+                        text-transform: uppercase;
                     }
                 }
                 button {
                     @include button(#FF4136, 0);
                     margin-top: 25px;
                 }
+            }
+        }
+    }
+    &_ps {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &-price {
+            color: #fff;
+            font-family: "Chakra Petch", sans-serif;
+            h2 {
+                font-weight: 700;
+            }
+        }
+        &-title {
+            color: #fff;
+            h4 {
+                font-size: 20px;
+            }
+        }
+        &-block {
+            display: flex;
+            position: relative;
+            margin-top: 80px;
+            &-img {
+                background: url(../../img/explore2-bg.png);
+                background-repeat: no-repeat;
+                width: 300px;
+                height: 300px;
+            }
+            img {
+                position: absolute;
+                top: -123px;
+                right: 40px;
             }
         }
     }
