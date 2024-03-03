@@ -5,6 +5,7 @@ import { Editions } from "./components/editions/Editions.tsx";
 import { DualSense } from "./components/dual-sense/DualSense.tsx";
 import { About } from "./components/about/About.tsx";
 import { Explore } from "./components/explore/Explore.tsx";
+import { News } from "./components/news/News.tsx";
 
 export const App = () => {
 	return (
@@ -15,6 +16,7 @@ export const App = () => {
 			<DualSense />
 			<About />
 			<Explore />
+			<News />
 		</div>
 	);
 };

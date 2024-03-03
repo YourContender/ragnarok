@@ -1,0 +1,131 @@
+@import "../../sass/mixins.scss";
+
+.news {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    // // display: flex;
+    // // flex-direction: column;
+    // // align-items: center;
+    // justify-content: center;
+    margin-bottom: 100px; //tmp
+    &_container {
+        width: 70%;
+    }
+    &_item {
+        width: 580px;
+        background-color: #30373F;
+        font-family: "Chakra Petch", sans-serif;
+        border-radius: 8px;
+        margin: 20px;
+        &-up {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 25px 0 25px;
+            &-name, &-date {
+                font-size: 12px;
+                color: #8856D9;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+            &-date {
+                color: #8C96A0;
+                font-weight: 400;
+            }
+        }
+        &-title {
+            h2 {
+                margin: 10px 0;
+                padding-left: 25px;
+                text-transform: uppercase;
+                color: #fff;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+        &-content {
+            display: flex;
+            padding: 0 25px 35px 25px;
+            img {
+                width: 278px;
+                height: 248px;
+            }
+            &-text {
+                padding-left: 25px;
+                position: relative;
+                span {
+                    color: #D9D9D9;
+                    font-size: 12px;
+                }
+                button {
+                    // display: block;
+                    @include button(#8C96A0, 0);
+                    position: absolute;
+                    right: 0;
+                    width: 96px;
+                }
+            }
+        }
+    }
+}
+
+.slick-arrow .slick-next {
+    &::before {
+        display: none;
+    }
+}
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+.slick-list {
+    margin: 0 -10px;
+}
+
+@media (max-width: 1745px) {
+    .news {
+        &_container {
+            width: 740px;
+        }
+        &_item {
+            width: 320px;
+            &-content {
+                flex-direction: column;
+                align-items: center;
+                &-text {
+                    padding: 10px 0 20px 0;
+                    button {
+                        right: -10px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .news {
+        &_container {
+            width: 640px;
+        }
+        &_item {
+            width: 580px;
+            &-content {
+                flex-direction: row;
+                &-text {
+                    padding-left: 20px;
+                    button {
+                        right: 0;
+                        margin-top: 0;
+                    }
+                }
+            }
+            
+        }
+    }
+}
