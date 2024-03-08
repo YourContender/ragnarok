@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./News.scss";
 import { NewsItem } from './news-item/NewsItem.tsx';
 import Slider from "react-slick";
@@ -35,15 +35,15 @@ export const News = () => {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          pagination: false
         }
       }
     ]
   };
+
   return (
     <div className="news">
-      
-
       <div className="news_container">
         <Slider {...settings}>
           <NewsItem />

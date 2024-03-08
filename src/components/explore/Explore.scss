@@ -133,7 +133,9 @@
 
 
 @media (max-width: 992px) {
+    
     .explore {
+        display: none;
         &_pc {
             &-block {
                 flex-direction: column;
