@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import "./News.scss";
+import React from 'react';
 import { NewsItem } from './news-item/NewsItem.tsx';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./News.scss";
 
 export const News = () => {
   const settings = {
@@ -45,6 +45,9 @@ export const News = () => {
   return (
     <div className="news">
       <div className="news_container">
+      <div className="news_title">
+        <h1>News</h1>
+      </div>
         <Slider {...settings}>
           <NewsItem />
           <NewsItem />

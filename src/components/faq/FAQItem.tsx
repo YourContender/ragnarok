@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import "./FAQ.scss";
 
-export const FAQItem = () => {
+export const FAQItem: FC = () => {
 	const itemRef = useRef(null);
 	const [openAnswer, setOpenAnswer] = useState(false);
 

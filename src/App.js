@@ -7,6 +7,7 @@ import { About } from "./components/about/About.tsx";
 import { Explore } from "./components/explore/Explore.tsx";
 import { News } from "./components/news/News.tsx";
 import { FAQ } from "./components/faq/FAQ.tsx";
+import { Footer } from "./components/footer/Footer.tsx";
 
 export const App = () => {
 	return (
@@ -19,6 +20,7 @@ export const App = () => {
 			<Explore />
 			<News />
 			<FAQ />
+			<Footer />
 		</div>
 	);
 };

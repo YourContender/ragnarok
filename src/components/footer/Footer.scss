@@ -1,0 +1,126 @@
+.footer {
+    color: #8C96A0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    &_container {
+        width: 900px;
+        position: relative;
+    }
+    &_nav {
+        display: flex;
+        justify-content: space-around;
+        &-item {
+            text-transform: uppercase;
+            font-size: 18px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+        }
+    }
+    &_text {
+        text-align: center;
+    }
+    &_image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 45px;
+        &-bg {
+            img {
+                position: absolute;
+                top: -50%;
+                z-index: -99;
+                right: 0%;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .footer {
+        &_container {
+            width: 700px;
+        }
+        &_image {
+            &-bg {
+                img {
+                    top: -25%;
+                    right: 0%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &_container {
+            width: 540px;
+            background: url(../../img/bg.png);
+            background-position: center;
+            background-size: cover;
+        }
+        &_image {
+            &-bg {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        &_container {
+            width: 400px;
+        }
+        &_image {
+            &-bg {
+                img {
+                    top: -25%;
+                    right: 0%;
+                }
+            }
+        }
+        &_nav {
+            flex-wrap: wrap;
+            &-item {
+                font-size: 14px;
+            }
+        }
+        &_text {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 436px) {
+    .footer {
+        &_container {
+            width: 100%;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &_image {
+            &-bg {
+                img {
+                    top: -25%;
+                    right: 0%;
+                }
+            }
+        }
+        &_nav {
+            flex-wrap: wrap;
+            width: 260px;
+            &-item {
+                font-size: 14px;
+            }
+        }
+        &_text {
+            font-size: 12px;
+        }
+    }
+}
