@@ -1,10 +1,23 @@
 import React, { FC } from 'react';
 import "./Preview.scss";
+import Modal from '../modal/Modal.tsx';
 
-export const Preview: FC = () => {
+interface PreviewProps {
+    openModal: () => void;
+    showModal: boolean;
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Preview: FC<PreviewProps> = ({ showModal, setShowModal, openModal }) => {
+
   return (
     <div className="preview">
-        <div className="preview_block">
+        <div className="preview_block">    
+        </div>
+        <div className="preview_img">
+        </div>
+
+        <div className="preview_container">
             <div className="preview_block-title">
                 <h1>
                     God of War Ragnarök
@@ -14,11 +27,12 @@ export const Preview: FC = () => {
                     Fimbulwinter, a great winter that spans three summers, is drawing 
                     to a close which will begin the prophesied Ragnarök.
                 </span>
-                <button>buy now</button>
+                <button onClick={() => openModal()}>buy now</button>
             </div>
         </div>
-        <div className="preview_img">
-        </div>
+        {/* {
+            showModal ? <Modal/> : null
+        } */}
     </div>
   )
 }

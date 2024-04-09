@@ -3,9 +3,11 @@ import { Editions } from '../../types';
 
 interface EditionsItemProps {
     item: Editions
+    showModal: boolean
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const EditionsItem: FC<EditionsItemProps> = ({item}) => {
+export const EditionsItem: FC<EditionsItemProps> = ({ item, showModal, setShowModal }) => {
   return (
     <div className="editions_card">
         <div className="editions_card-img">
@@ -22,7 +24,7 @@ export const EditionsItem: FC<EditionsItemProps> = ({item}) => {
         </div>
         <div className="editions_card-price">
             <span>{item.price}</span>
-            <button>buy now</button>
+            <button onClick={() => setShowModal(true)}>buy now</button>
         </div>
     </div>
   )

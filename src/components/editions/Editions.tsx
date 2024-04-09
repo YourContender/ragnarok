@@ -3,7 +3,12 @@ import "./Editions.scss";
 import { editions } from "../../data";
 import { EditionsItem } from './EditionsItem.tsx';
 
-export const Editions: FC = () => {
+interface EditionsProps {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Editions: FC<EditionsProps> = ({ showModal, setShowModal }) => {
   return (
     <div className="editions">
         <div className="editions_title">
@@ -12,7 +17,7 @@ export const Editions: FC = () => {
 
         <div className="editions_container">
             {editions.map(item => {
-                return <EditionsItem key={item.id} item={item}/>
+                return <EditionsItem key={item.id} item={item} showModal={showModal} setShowModal={setShowModal}/>
             })}            
         </div>
     </div>
