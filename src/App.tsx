@@ -12,29 +12,26 @@ import Modal from "./components/modal/Modal.tsx";
 
 export const App = () => {
 	const [showModal, setShowModal] = useState(false);
+	const [priceModal, setPriceModal] = useState('');
 
-	const toggleModal = () => {
-		return setShowModal(!showModal);
-	};
-
-	const openModal = () => {
-		console.log('open modal')
+	const openModal = (price: string) => {
 		setShowModal(true);
+		setPriceModal(price);
 	}
 
 	return (
 		<div>
 			<Header />
-			<Preview showModal={showModal} setShowModal={setShowModal} openModal={openModal} />
-			<Editions showModal={showModal} setShowModal={setShowModal} />
-			<DualSense />
+			<Preview openModal={openModal} />
+			<Editions openModal={openModal} />
+			<DualSense openModal={openModal} />
 			<About />
-			<Explore />
+			<Explore openModal={openModal}/>
 			<News />
 			<FAQ />
-			<Footer />																												
+			<Footer />																										
 			{
-				showModal ? <Modal showModal={showModal} setShowModal={setShowModal} /> : null
+				showModal ? <Modal showModal={showModal} setShowModal={setShowModal} priceModal={priceModal} /> : null
 			}
 		</div>
 	);

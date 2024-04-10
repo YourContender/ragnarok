@@ -3,8 +3,11 @@ import { ExplorePC } from './pc/ExplorePC.tsx';
 import { ExplorePS } from './ps/ExplorePS.tsx';
 import "./Explore.scss";;
 
+interface ExploreProps {
+    openModal: (price: string) => void;
+}
 
-export const Explore: FC = () => {
+export const Explore: FC<ExploreProps> = ({ openModal }) => {
     const [changeDescriptionPC, setChangeDescriptionPC] = useState("min");
     const [changeDescriptionPS, setChangeDescriptionPS] = useState("min");
 
@@ -15,10 +18,12 @@ export const Explore: FC = () => {
             </div>
 
             <ExplorePC 
+                openModal={openModal}
                 changeDescriptionPC={changeDescriptionPC} 
                 setChangeDescriptionPC={setChangeDescriptionPC}/>
 
-           <ExplorePS 
+            <ExplorePS 
+                openModal={openModal}
                 changeDescription={changeDescriptionPS} 
                 setChangeDescription={setChangeDescriptionPS}/>
         </div>

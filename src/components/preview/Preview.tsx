@@ -1,14 +1,11 @@
 import React, { FC } from 'react';
 import "./Preview.scss";
-import Modal from '../modal/Modal.tsx';
 
 interface PreviewProps {
-    openModal: () => void;
-    showModal: boolean;
-    setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+    openModal: (price: string) => void;
 }
 
-export const Preview: FC<PreviewProps> = ({ showModal, setShowModal, openModal }) => {
+export const Preview: FC<PreviewProps> = ({ openModal }) => {
 
   return (
     <div className="preview">
@@ -27,12 +24,9 @@ export const Preview: FC<PreviewProps> = ({ showModal, setShowModal, openModal }
                     Fimbulwinter, a great winter that spans three summers, is drawing 
                     to a close which will begin the prophesied Ragnarök.
                 </span>
-                <button onClick={() => openModal()}>buy now</button>
+                <button onClick={() => openModal('18.99$')}>buy now</button>
             </div>
         </div>
-        {/* {
-            showModal ? <Modal/> : null
-        } */}
     </div>
   )
 }

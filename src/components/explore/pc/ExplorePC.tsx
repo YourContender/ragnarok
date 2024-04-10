@@ -6,9 +6,10 @@ import { exploreData } from '../../../data';
 interface ExplorePCProps {
     setChangeDescriptionPC: React.Dispatch<React.SetStateAction<string>>;
     changeDescriptionPC: string;
+    openModal: (price: string) => void;
 }
 
-export const ExplorePC: FC<ExplorePCProps> = ({changeDescriptionPC, setChangeDescriptionPC}) => {
+export const ExplorePC: FC<ExplorePCProps> = ({ changeDescriptionPC, setChangeDescriptionPC, openModal }) => {
     return (
         <div className="explore_pc">
             <div className="explore_pc-title">
@@ -30,6 +31,7 @@ export const ExplorePC: FC<ExplorePCProps> = ({changeDescriptionPC, setChangeDes
 
                 <ExploreItemPC 
                     data={changeDescriptionPC === "min" ? exploreData[0] : exploreData[1]}
+                    openModal={openModal}
                 />
             </div>
         </div>

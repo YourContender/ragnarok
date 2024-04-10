@@ -16,4 +16,5 @@ export interface ExploreTypes {
 	vertex: string;
 	disk: string;
 	video: string;
+	price: string;
 }

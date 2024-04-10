@@ -4,11 +4,10 @@ import { editions } from "../../data";
 import { EditionsItem } from './EditionsItem.tsx';
 
 interface EditionsProps {
-  showModal: boolean;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  openModal: (price: string) => void;
 }
 
-export const Editions: FC<EditionsProps> = ({ showModal, setShowModal }) => {
+export const Editions: FC<EditionsProps> = ({ openModal }) => {
   return (
     <div className="editions">
         <div className="editions_title">
@@ -17,7 +16,13 @@ export const Editions: FC<EditionsProps> = ({ showModal, setShowModal }) => {
 
         <div className="editions_container">
             {editions.map(item => {
-                return <EditionsItem key={item.id} item={item} showModal={showModal} setShowModal={setShowModal}/>
+                return (
+                  <EditionsItem 
+                    key={item.id} 
+                    item={item} 
+                    openModal={openModal}
+                  />
+                )       
             })}            
         </div>
     </div>

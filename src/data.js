@@ -47,6 +47,7 @@ export const exploreData = [
 		vertex: "5.1",
 		disk: "70 GB",
 		video: "4 GB",
+		price: "20.99$",
 	},
 	{
 		cpu: "Intel Core i7-9700K (8 core 3.6 GHz) or AMD Ryzen 7 3700X (8 core 3.6 GHz)",
@@ -57,5 +58,6 @@ export const exploreData = [
 		vertex: "6.5",
 		disk: "100 GB or higher",
 		video: "10 GB or higher",
+		price: "20.99$",
 	},
 ];

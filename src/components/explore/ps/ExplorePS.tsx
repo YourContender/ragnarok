@@ -6,9 +6,10 @@ import { SwitchButton } from '../../widgets/SwitchButton.tsx';
 interface ExplorePSProps {
     setChangeDescription: React.Dispatch<React.SetStateAction<string>>;
     changeDescription: string;
+    openModal: (price: string) => void;
 }
 
-export const ExplorePS: FC<ExplorePSProps> = ({ changeDescription, setChangeDescription}) => {
+export const ExplorePS: FC<ExplorePSProps> = ({ changeDescription, setChangeDescription, openModal }) => {
     return (
         <div className="explore_ps">
             <div className="explore_ps-title">
@@ -28,6 +29,7 @@ export const ExplorePS: FC<ExplorePSProps> = ({ changeDescription, setChangeDesc
             <div className="explore_ps-block">
                 <ExploreItemPS 
                     data={changeDescription === "min" ? exploreData[0] : exploreData[1]}
+                    openModal={openModal}
                 />
 
                 <div className="explore_ps-block-container">

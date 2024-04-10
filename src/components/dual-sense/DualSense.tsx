@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 import "./DualSense.scss";
 
-export const DualSense = () => {
+interface DualSenseProps {
+    openModal: (price: string) => void;
+}
+
+export const DualSense: FC<DualSenseProps> = ({ openModal }) => {
   return (
     <div className="sense">
         <div className="sense_title">
@@ -21,7 +25,9 @@ export const DualSense = () => {
                 </div>
                 <div className="sense_price">
                     <span>35.99$</span>
-                    <button>buy dualsense with a game</button>
+                    <button onClick={() => openModal("35.99$")}>
+                        buy dualsense with a game
+                    </button>
                 </div>
             </div>
             <div className="sense_container-img">
