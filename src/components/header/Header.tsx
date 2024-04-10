@@ -4,8 +4,15 @@ import { SiSteam } from "react-icons/si";
 import { Timer } from './timer/Timer.tsx';
 import { RxHamburgerMenu } from "react-icons/rx";
 import './Header.scss';
+import i18n from '../../i18n.js';
 
-export const Header: FC = () => {
+interface HeaderProps {
+    [key: string]: {
+        title: string;
+    };
+}
+
+export const Header: FC<HeaderProps> = ({ locales }) => {
     const [openDropdown, setOpenDropdown] = useState(false);
     const [choiseLanguage, setChoiseLanguage] = useState('English');
 
@@ -27,6 +34,17 @@ export const Header: FC = () => {
                         choiseLanguage={choiseLanguage}
                         setOpenDropdown={setOpenDropdown} 
                         openDropdown={openDropdown}/>
+                        
+                    <div>
+                        {Object.keys(locales).map(item => (
+                            <button
+                                type='submit'
+                                onClick={() => i18n.changeLanguage(item)}
+                            >
+                                {locales[item].title}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 

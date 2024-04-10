@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { Header } from "./components/header/Header.tsx";
 import { Preview } from "./components/preview/Preview.tsx";
 import { Editions } from "./components/editions/Editions.tsx";
@@ -9,10 +9,17 @@ import { News } from "./components/news/News.tsx";
 import { FAQ } from "./components/faq/FAQ.tsx";
 import { Footer } from "./components/footer/Footer.tsx";
 import Modal from "./components/modal/Modal.tsx";
+import { useTranslation } from "react-i18next";
+
+const locales = {
+	en: {title: "English"},
+	ua: {title: "Ukrainian"}
+}
 
 export const App = () => {
 	const [showModal, setShowModal] = useState(false);
 	const [priceModal, setPriceModal] = useState('');
+	const {t, i18n} = useTranslation();
 
 	const openModal = (price: string) => {
 		setShowModal(true);
@@ -20,8 +27,9 @@ export const App = () => {
 	}
 
 	return (
-		<div>
-			<Header />
+		<Suspense fallback="...loading">
+			<h1>{t("main.editions")}</h1>
+			<Header locales={locales}/>
 			<Preview openModal={openModal} />
 			<Editions openModal={openModal} />
 			<DualSense openModal={openModal} />
@@ -33,6 +41,6 @@ export const App = () => {
 			{
 				showModal ? <Modal showModal={showModal} setShowModal={setShowModal} priceModal={priceModal} /> : null
 			}
-		</div>
+		</Suspense>
 	);
 };
