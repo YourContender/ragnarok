@@ -1,16 +1,17 @@
 import React from 'react';
 import "../News.scss";
+import { t } from 'i18next';
 
 export const NewsItem = () => {
     return (
         <div className="news_item">
             <div className="news_item-up">
-                <span className="news_item-up-name">God of War Ragnarok</span>
+                <span className="news_item-up-name">{t("news.subtitle")}</span>
                 <span className="news_item-up-date">19/10/2022</span>
             </div>
 
             <div className="news_item-title">
-                <h2>will receive a large update on release</h2>
+                <h2>{t("news.item.title")}</h2>
             </div>
             
             <div className="news_item-content">
@@ -18,16 +19,10 @@ export const NewsItem = () => {
                 
                 <div className="news_item-content-text">
                     <span>
-                        God of War: Ragnarok is fast approaching. 
-                        No wonder that we have been regularly receiving new information
-                        and materials related to the title in recent times. 
-                        Last week, a trailer presenting the possibilities of the game on PlayStation 5 
-                        hit the network, and a little earlier we learned that the work on the 
-                        production was completed . Meanwhile, it turns out that the upcoming sequel
-                        to the adventures of Kratos and Atreus will receive a major update on release.
+                        {t("news.item.descr")}
                     </span>
 
-                    <button>read</button>
+                    <button>{t("news.item.button")}</button>
                 </div>
             </div>
         </div>

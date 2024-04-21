@@ -1,5 +1,80 @@
 {
+	"language": "English",
 	"main": {
 		"editions": "Hello world!"
+	},
+	"header": {
+		"editions": "editions",
+		"about": "about",
+		"explore": "explore",
+		"news": "news",
+		"faq": "faq"
+	},
+	"preview": {
+		"title": "God of War Ragnarök",
+		"descr": "Taking place three years following the events of the previous game, Fimbulwinter, a great winter that spans three summers, is drawing to a close which will begin the prophesied Ragnarök.",
+		"button": "buy now"
+	},
+	"editions": {
+		"title": "editions",
+		"standard": {
+			"title": "Standard Edition",
+			"first": "Offline play enabled",
+			"second": "Remote Play supported",
+			"third": "Trigger effect required"
+		},
+		"deluxe": {
+			"title": "Digital Deluxe Edition",
+			"first": "All features of Standard Edition",
+			"second": "Darkdale Armour",
+			"third": "Official digital soundtrack"
+		},
+		"button": "buy now"
+	},
+	"dualsense": {
+		"title": "dualsense",
+		"descr1": {
+			"part1": "You can also buy an exclusive controller with the",
+			"part2": "God of War Ragnarok",
+			"part3": "theme for PS5"
+		},
+		"descr2": {
+			"part1": "If you purchase a controller and a game (any edition), you will receive a",
+			"part2": "15%",
+			"part3": "discount on two items."
+		},
+		"button": "buy dualsense with a game"
+	},
+	"about": "about",
+	"video": "Watch the Trailer",
+	"explore": {
+		"title": "Explore the God of War series",
+		"descr": "Here are the God of War (PC) System Requirements",
+		"descr1": "God of War for PS4",
+		"button": "buy now"
+	},
+	"news": {
+		"title": "news",
+		"subtitle": "God of War Ragnarok",
+		"item": {
+			"title": "will receive a large update on release",
+			"descr": "God of War: Ragnarok is fast approaching. No wonder that we have been regularly receiving new information and materials related to the title in recent times. Last week, a trailer presenting the possibilities of the game on PlayStation 5 hit the network, and a little earlier we learned that the work on the production was completed . Meanwhile, it turns out that the upcoming sequel to the adventures of Kratos and Atreus will receive a major update on release.",
+			"button": "read"
+		}
+	},
+	"faq": {
+		"title": "faq",
+		"subtitle": "When is the next God of War coming out?",
+		"descr1": "God of War Ragnarök will release on",
+		"descr2": "November 9, 2022",
+		"descr3": ". To get the latest updates on release timing, make sure you follow Santa Monica Studio on Twitter, Instagram and Facebook!"
+	},
+	"footer": {
+		"editions": "editions",
+		"about": "about",
+		"explore": "explore",
+		"news": "news",
+		"faq": "faq",
+		"descr": "Download of this product is subject to the PlayStation Network Terms of Service and our Software Usage Terms plus any specific additional conditions applying to this product. If you do not wish to accept these terms, do not download this product. See Terms of Service for more important information."
 	}
 }

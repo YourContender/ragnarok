@@ -28,7 +28,7 @@ export const App = () => {
 
 	return (
 		<Suspense fallback="...loading">
-			<h1>{t("main.editions")}</h1>
+			{/* <h1>{t("main.editions")}</h1> */}
 			<Header locales={locales}/>
 			<Preview openModal={openModal} />
 			<Editions openModal={openModal} />

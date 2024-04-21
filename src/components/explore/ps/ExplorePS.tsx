@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { ExploreItemPS } from './ExploreItemPS.tsx';
 import { exploreData } from '../../../data';
 import { SwitchButton } from '../../widgets/SwitchButton.tsx';
+import { t } from 'i18next';
 
 interface ExplorePSProps {
     setChangeDescription: React.Dispatch<React.SetStateAction<string>>;
@@ -13,7 +14,7 @@ export const ExplorePS: FC<ExplorePSProps> = ({ changeDescription, setChangeDesc
     return (
         <div className="explore_ps">
             <div className="explore_ps-title">
-                <h4>God of War for PS4</h4>
+                <h4>{t("explore.descr1")}</h4>
             </div>
             <div className="explore_ps-switch">
                 <SwitchButton 

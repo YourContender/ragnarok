@@ -18,3 +18,7 @@ export interface ExploreTypes {
 	video: string;
 	price: string;
 }
+
+export interface TitleProps {
+	title: string;
+}

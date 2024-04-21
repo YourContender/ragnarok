@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { SwitchButton } from '../../widgets/SwitchButton.tsx';
 import { ExploreItemPC } from './ExploreItemPC.tsx';
 import { exploreData } from '../../../data';
+import { t } from 'i18next';
 
 interface ExplorePCProps {
     setChangeDescriptionPC: React.Dispatch<React.SetStateAction<string>>;
@@ -13,7 +14,7 @@ export const ExplorePC: FC<ExplorePCProps> = ({ changeDescriptionPC, setChangeDe
     return (
         <div className="explore_pc">
             <div className="explore_pc-title">
-                <h4>Here are the God of War (PC) System Requirements</h4>
+                <h4>{t("explore.descr")}</h4>
             </div>
             <div className="explore_pc-switch">
                 <SwitchButton 

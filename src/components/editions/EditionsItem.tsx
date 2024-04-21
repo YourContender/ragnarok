@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Editions } from '../../types';
+import { t } from 'i18next';
 
 interface EditionsItemProps {
     item: Editions
@@ -17,13 +18,24 @@ export const EditionsItem: FC<EditionsItemProps> = ({ item, openModal }) => {
             <span>{item.subtitle}</span>
         </div>
         <div className="editions_card-descr">
-            {item.descr.map(item => {
-                return <span key={item}>{item}</span>
-            })}
+            {
+                item.title === "Standard Edition" ? 
+                    <>
+                        <span>{t("editions.standard.first")}</span>
+                        <span>{t("editions.standard.second")}</span>
+                        <span>{t("editions.standard.third")}</span>   
+                    </> 
+                :
+                    <>
+                        <span>{t("editions.deluxe.first")}</span>
+                        <span>{t("editions.deluxe.second")}</span>
+                        <span>{t("editions.deluxe.third")}</span>  
+                    </>
+            }
         </div>
         <div className="editions_card-price">
             <span>{item.price}</span>
-            <button onClick={() => openModal(item.price)}>buy now</button>
+            <button onClick={() => openModal(item.price)}>{t("editions.button")}</button>
         </div>
     </div>
   )

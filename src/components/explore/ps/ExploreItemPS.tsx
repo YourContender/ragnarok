@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { ExploreTypes } from '../../../types.ts';
 import "../Explore.scss";
+import { t } from 'i18next';
 
 interface ExploreProps {
     data: ExploreTypes
@@ -23,7 +24,7 @@ export const ExploreItemPS: FC<ExploreProps> = ({ data, openModal }) => {
             }
             <button 
                 onClick={() => openModal(Object.values(data.price).join(''))}>
-                    buy now
+                    {t("explore.button")}
             </button>
         </div>
     )

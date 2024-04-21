@@ -1,5 +1,6 @@
 import React, { FC, useRef, useState } from "react";
 import "./FAQ.scss";
+import { t } from "i18next";
 
 export const FAQItem: FC = () => {
 	const itemRef = useRef(null);
@@ -8,7 +9,7 @@ export const FAQItem: FC = () => {
 	return (
 		<div className="faq_item">
 			<div className="faq_item-top">
-				<span>When is the next God of War coming out?</span>
+				<span>{t("faq.subtitle")}</span>
 				<button onClick={() => setOpenAnswer(!openAnswer)}>
 					{!openAnswer ? "+" : `x`}
 				</button>
@@ -18,9 +19,9 @@ export const FAQItem: FC = () => {
 				style={openAnswer ? { height: `110px` } : { height: "0px" }}
 			>
 				<p ref={itemRef}>
-					God of War Ragnarök will release on <span>November 9, 2022</span>. To
-					get the latest updates on release timing, make sure you follow Santa
-					Monica Studio on Twitter, Instagram and Facebook!
+					{t("faq.descr1")} 
+					<span> {t("faq.descr2")} </span>
+					{t("faq.descr3")}
 				</p>
 			</div>
 		</div>

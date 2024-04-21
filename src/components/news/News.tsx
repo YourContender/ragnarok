@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./News.scss";
+import { t } from 'i18next';
 
 export const News = () => {
   const settings = {
@@ -46,7 +47,7 @@ export const News = () => {
     <div className="news">
       <div className="news_container">
       <div className="news_title">
-        <h1>News</h1>
+        <h1>{t("news.title")}</h1>
       </div>
         <Slider {...settings}>
           <NewsItem />

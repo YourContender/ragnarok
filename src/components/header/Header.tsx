@@ -3,18 +3,18 @@ import { Dropdown } from './dropdown/Dropdown.tsx';
 import { SiSteam } from "react-icons/si";
 import { Timer } from './timer/Timer.tsx';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TitleProps } from '../../types.ts';
+import { t } from 'i18next';
 import './Header.scss';
-import i18n from '../../i18n.js';
 
 interface HeaderProps {
     [key: string]: {
-        title: string;
+        [title: string]: TitleProps
     };
 }
 
 export const Header: FC<HeaderProps> = ({ locales }) => {
     const [openDropdown, setOpenDropdown] = useState(false);
-    const [choiseLanguage, setChoiseLanguage] = useState('English');
 
     return (
         <div className="header">
@@ -24,27 +24,15 @@ export const Header: FC<HeaderProps> = ({ locales }) => {
                     <div className="header_sidebar-logo">
                         <SiSteam />
                     </div>
-                    <div className="header_sidebar-item">Editions</div>
-                    <div className="header_sidebar-item">About</div>
-                    <div className="header_sidebar-item">Explore</div>
-                    <div className="header_sidebar-item">News</div>
-                    <div className="header_sidebar-item">FAQ</div>
+                    <div className="header_sidebar-item">{t("header.editions")}</div>
+                    <div className="header_sidebar-item">{t("header.about")}</div>
+                    <div className="header_sidebar-item">{t("header.explore")}</div>
+                    <div className="header_sidebar-item">{t("header.news")}</div>
+                    <div className="header_sidebar-item">{t("header.faq")}</div>
                     <Dropdown 
-                        setChoiseLanguage={setChoiseLanguage} 
-                        choiseLanguage={choiseLanguage}
                         setOpenDropdown={setOpenDropdown} 
-                        openDropdown={openDropdown}/>
-                        
-                    <div>
-                        {Object.keys(locales).map(item => (
-                            <button
-                                type='submit'
-                                onClick={() => i18n.changeLanguage(item)}
-                            >
-                                {locales[item].title}
-                            </button>
-                        ))}
-                    </div>
+                        openDropdown={openDropdown}
+                        locales={locales}/>
                 </div>
 
                 

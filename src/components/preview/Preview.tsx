@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import "./Preview.scss";
+import { t } from 'i18next';
 
 interface PreviewProps {
     openModal: (price: string) => void;
@@ -20,11 +21,9 @@ export const Preview: FC<PreviewProps> = ({ openModal }) => {
                     God of War Ragnarök
                 </h1>
                 <span>
-                    Taking place three years following the events of the previous game, 
-                    Fimbulwinter, a great winter that spans three summers, is drawing 
-                    to a close which will begin the prophesied Ragnarök.
+                    {t("preview.descr")}
                 </span>
-                <button onClick={() => openModal('18.99$')}>buy now</button>
+                <button onClick={() => openModal('18.99$')}>{t("preview.button")}</button>
             </div>
         </div>
     </div>
