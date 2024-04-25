@@ -8,7 +8,6 @@ export const Footer = () => {
        <div className="footer_container">
             <div className="footer_nav">
                 <span className="footer_nav-item">{t("footer.editions")}</span>
-                <span className="footer_nav-item">{t("footer.controller")}</span>
                 <span className="footer_nav-item">{t("footer.about")}</span>
                 <span className="footer_nav-item">{t("footer.explore")}</span>
                 <span className="footer_nav-item">{t("footer.news")}</span>

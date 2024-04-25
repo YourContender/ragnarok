@@ -25,14 +25,14 @@ const Modal: FC<TestProps> = ({ showModal, setShowModal, priceModal }) => {
                         <input type="text" placeholder="0000 0000 0000 0000" />
                     </div>
                     <div className="modal_expire">
-                        <div>
+                        <div className="modal_expire-block">
                             <label>{t("modal.expire")}: </label>
-                            <input type="text" placeholder="MM/YY" />
+                            <input className="modal_expire-field" type="text" placeholder="MM/YY" />
                         </div>
 
-                        <div>
+                        <div className="modal_expire-block">
                             <label>{t("modal.cvv")}: </label>
-                            <input type="text" placeholder="***"/>
+                            <input className="modal_expire-field" type="text" placeholder="***"/>
                         </div>
                     </div>
                     <div className="modal_instant">
