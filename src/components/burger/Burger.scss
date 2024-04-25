@@ -1,0 +1,32 @@
+.burger {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 85px;
+    left: 20px;
+    backdrop-filter: blur(50px);
+    z-index: 100;
+    margin-top: -10px;
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 10px;
+    &-item {
+        font-size: 24px;
+        margin-top: 15px;
+        color: #fff;
+        padding: 0 0.6250em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.5s ease-in;
+        &:hover {
+            color: #8856D9;
+        }
+    }
+    &-logo {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 30px;
+        color: #fff;
+    }
+}

@@ -5,7 +5,9 @@ import { Timer } from './timer/Timer.tsx';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TitleProps } from '../../types.ts';
 import { t } from 'i18next';
+import { IoClose } from "react-icons/io5";
 import './Header.scss';
+import { Burger } from '../burger/Burger.tsx';
 
 interface HeaderProps {
     [key: string]: {
@@ -15,11 +17,49 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({ locales }) => {
     const [openDropdown, setOpenDropdown] = useState(false);
+    const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
 
     return (
         <div className="header">
+            {/* {
+                openBurgerMenu ? <Burger /> :
+                    <div className="header_container">
+                        <RxHamburgerMenu className="header_burger" onClick={() => setOpenBurgerMenu(true)}/>
+                        <div className="header_sidebar">
+                            <div className="header_sidebar-logo">
+                                <SiSteam />
+                            </div>
+                            <div className="header_sidebar-item">{t("header.editions")}</div>
+                            <div className="header_sidebar-item">{t("header.about")}</div>
+                            <div className="header_sidebar-item">{t("header.explore")}</div>
+                            <div className="header_sidebar-item">{t("header.news")}</div>
+                            <div className="header_sidebar-item">{t("header.faq")}</div>
+                            <Dropdown 
+                                setOpenDropdown={setOpenDropdown} 
+                                openDropdown={openDropdown}
+                                locales={locales}/>
+                        </div>
+
+                        
+                        <div className="header_date">
+                            <Timer/>
+                        </div>
+                    </div>
+            } */}
             <div className="header_container">
-                <RxHamburgerMenu className="header_burger"/>
+                
+                {
+                    !openBurgerMenu ? 
+                        <RxHamburgerMenu 
+                            className="header_burger" 
+                            onClick={() => setOpenBurgerMenu(true)}
+                        /> 
+                        : 
+                        <IoClose 
+                            className="header_burger" 
+                            onClick={() => setOpenBurgerMenu(false)}
+                        />
+                }
                 <div className="header_sidebar">
                     <div className="header_sidebar-logo">
                         <SiSteam />
@@ -40,6 +80,10 @@ export const Header: FC<HeaderProps> = ({ locales }) => {
                     <Timer/>
                 </div>
             </div>
+
+            {
+                openBurgerMenu ? <Burger /> : null
+            }
         </div>
     )
 }
